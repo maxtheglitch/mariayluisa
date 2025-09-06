@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://qkmsqo18r7c3"]
 
-[ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_ufpfk"]
+[ext_resource type="Script" uid="uid://dj8rnwcqworki" path="res://lvl_4.gd" id="1_i37vr"]
 [ext_resource type="Texture2D" uid="uid://b62me447u3f0q" path="res://assets/BG/BG4.png" id="2_ufpfk"]
 [ext_resource type="Texture2D" uid="uid://b6vwvu30rpbve" path="res://assets/tilemap/tilemap.png" id="3_eidr8"]
 [ext_resource type="PackedScene" uid="uid://c3aq22troe52h" path="res://maria.tscn" id="4_sfugp"]
@@ -33,8 +33,8 @@ texture_region_size = Vector2i(10, 10)
 tile_size = Vector2i(5, 5)
 sources/0 = SubResource("TileSetAtlasSource_clg6b")
 
-[node name="lvl4" type="Node2D"]
-script = ExtResource("1_ufpfk")
+[node name="lvl_4" type="Node2D"]
+script = ExtResource("1_i37vr")
 
 [node name="Bg4" type="Sprite2D" parent="."]
 position = Vector2(45, 45)
@@ -68,6 +68,7 @@ position = Vector2(35, 55)
 position = Vector2(25, 55)
 
 [node name="Grilla" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(45, 45)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("8_d7q7f")

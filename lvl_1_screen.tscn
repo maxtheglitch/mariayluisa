@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c58hqthp7epp0"]
+
+[ext_resource type="Script" uid="uid://wo84fgj3xbbo" path="res://lvl_1_screen.gd" id="1_06grs"]
+[ext_resource type="Texture2D" uid="uid://crahwx8hndm5k" path="res://assets/screens/lvl1Screen.png" id="1_avpvb"]
+
+[node name="lvl1Screen" type="Node2D"]
+script = ExtResource("1_06grs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(45, 45)
+scale = Vector2(0.201342, 0.245902)
+texture = ExtResource("1_avpvb")

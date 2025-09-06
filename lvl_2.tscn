@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://68w8f4eanit2"]
 
-[ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_beans"]
+[ext_resource type="Script" uid="uid://daby8cb4xb1w6" path="res://lvl_2.gd" id="1_beans"]
 [ext_resource type="Texture2D" uid="uid://bux6nx2vngwop" path="res://assets/BG/BG1.png" id="2_tmnqu"]
 [ext_resource type="Texture2D" uid="uid://b6vwvu30rpbve" path="res://assets/tilemap/tilemap.png" id="3_vbeg1"]
 [ext_resource type="PackedScene" uid="uid://c3aq22troe52h" path="res://maria.tscn" id="4_22vjt"]

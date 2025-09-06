@@ -7,4 +7,4 @@ extends Node2D
 
 func _process(delta):
 	if heart_area_2dm.heartCount == 1 and heart_area_2dl.heartCount == 1 :
-		get_tree().change_scene_to_file("res://lvl_2_screen.tscn")
+		get_tree().change_scene_to_file("res://lvl_3_screen.tscn")
