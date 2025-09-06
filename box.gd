@@ -25,8 +25,14 @@ func _process(delta):
 			position.x-=10
 		if Input.is_action_just_pressed("ui_right") and maria.canright and !centerb.noright:
 			position.x+=10
-	if upb.mariaIsUp and Input.is_action_just_pressed("ui_up") and maria.canup:
-		position.y+=10
-	if downb.mariaIsDown and Input.is_action_just_pressed("ui_down") and maria.candown:
-		position.y-=10
+	if upb.mariaIsUp and canup:
+		if Input.is_action_just_pressed("ui_up") and maria.canup:
+			position.y-=10
+		if Input.is_action_just_pressed("ui_down") and maria.candown and !centerb.nodown:
+			position.y+=10
+	if downb.mariaIsDown and candown:
+		if Input.is_action_just_pressed("ui_down") and maria.candown:
+			position.y+=10
+		if Input.is_action_just_pressed("ui_up") and maria.canup and !centerb.noup:
+			position.y-=10
 	
