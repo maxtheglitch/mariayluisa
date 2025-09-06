@@ -71,6 +71,8 @@ shape = SubResource("RectangleShape2D_3d203")
 [connection signal="area_exited" from="leftb" to="rightb" method="_on_leftb_area_exited"]
 [connection signal="body_entered" from="leftb" to="leftb" method="_on_body_entered"]
 [connection signal="body_exited" from="leftb" to="leftb" method="_on_body_exited"]
+[connection signal="area_entered" from="upb" to="downb" method="_on_upb_area_entered"]
+[connection signal="area_exited" from="upb" to="downb" method="_on_upb_area_exited"]
 [connection signal="body_entered" from="upb" to="upb" method="_on_body_entered"]
 [connection signal="body_exited" from="upb" to="upb" method="_on_body_exited"]
 [connection signal="body_entered" from="downb" to="downb" method="_on_body_entered"]

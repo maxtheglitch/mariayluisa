@@ -47,7 +47,7 @@ tile_map_data = PackedByteArray("AAAOAAgAAAAAAAAAAAAKAAwAAAAAAAAAAAACAA4AAAABAAA
 tile_set = SubResource("TileSet_jschv")
 
 [node name="maria" parent="." instance=ExtResource("4_ye7io")]
-position = Vector2(25, 55)
+position = Vector2(65, 75)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(45, 45)

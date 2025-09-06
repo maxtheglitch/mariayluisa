@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://qkmsqo18r7c3"]
+[gd_scene load_steps=13 format=4 uid="uid://qkmsqo18r7c3"]
 
 [ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_ufpfk"]
 [ext_resource type="Texture2D" uid="uid://b62me447u3f0q" path="res://assets/BG/BG4.png" id="2_ufpfk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bepthqwqs5ifa" path="res://heart_area_2d.tscn" id="7_niheu"]
 [ext_resource type="Texture2D" uid="uid://b30n2hgkw5hmd" path="res://Grilla.png" id="8_d7q7f"]
 [ext_resource type="PackedScene" uid="uid://dta10517raxgq" path="res://wall.tscn" id="9_s24pw"]
+[ext_resource type="PackedScene" uid="uid://bu61coo78wy2w" path="res://box.tscn" id="10_i37vr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clg6b"]
 texture = ExtResource("3_eidr8")
@@ -46,13 +47,13 @@ tile_map_data = PackedByteArray("AAAOAAgAAAABAAEAAAAKAAwAAAABAAEAAAACAA4AAAABAAA
 tile_set = SubResource("TileSet_jschv")
 
 [node name="maria" parent="." instance=ExtResource("4_sfugp")]
-position = Vector2(55, 25)
+position = Vector2(65, 15)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(45, 45)
 
 [node name="luisa" parent="." instance=ExtResource("5_7so1t")]
-position = Vector2(25, 25)
+position = Vector2(25, 15)
 
 [node name="Nopass" parent="." instance=ExtResource("6_yqkdm")]
 position = Vector2(25, 45)
@@ -67,7 +68,6 @@ position = Vector2(35, 55)
 position = Vector2(25, 55)
 
 [node name="Grilla" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(45, 45)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("8_d7q7f")
@@ -75,3 +75,6 @@ texture = ExtResource("8_d7q7f")
 [node name="wall" parent="." instance=ExtResource("9_s24pw")]
 position = Vector2(15, 65)
 scale = Vector2(2, 2)
+
+[node name="box" parent="." instance=ExtResource("10_i37vr")]
+position = Vector2(75, 35)

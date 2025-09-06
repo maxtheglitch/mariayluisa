@@ -33,8 +33,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down") and candown and !centerm.nodown:
 		if !isLuisaDown:
 			position.y+=10
+			canup = true
 		if isLuisaDown and canLuisaDown:
 			position.y+=10
+			canup = true
 		if isLuisaDown and !canLuisaDown:
 			pass
 	if Input.is_action_just_pressed("ui_up") and canup and !centerm.noup:

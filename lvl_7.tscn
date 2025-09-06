@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bvb04ubf2qlde"]
+[gd_scene load_steps=13 format=4 uid="uid://bvb04ubf2qlde"]
 
 [ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_nky3y"]
 [ext_resource type="Texture2D" uid="uid://bo7werp521k5e" path="res://assets/BG/BG7.png" id="2_nky3y"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bepthqwqs5ifa" path="res://heart_area_2d.tscn" id="7_gqb7d"]
 [ext_resource type="Texture2D" uid="uid://b30n2hgkw5hmd" path="res://Grilla.png" id="8_2pk2x"]
 [ext_resource type="PackedScene" uid="uid://dta10517raxgq" path="res://wall.tscn" id="9_o0bed"]
+[ext_resource type="PackedScene" uid="uid://bu61coo78wy2w" path="res://box.tscn" id="10_dxufq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clg6b"]
 texture = ExtResource("3_lcgbr")
@@ -116,3 +117,6 @@ texture = ExtResource("8_2pk2x")
 [node name="wall" parent="." instance=ExtResource("9_o0bed")]
 position = Vector2(15, 65)
 scale = Vector2(2, 2)
+
+[node name="box" parent="." instance=ExtResource("10_dxufq")]
+position = Vector2(55, 75)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://xb2bx1lip0pc"]
+[gd_scene load_steps=13 format=4 uid="uid://xb2bx1lip0pc"]
 
 [ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_43e0g"]
 [ext_resource type="Texture2D" uid="uid://c0bgad23jdwss" path="res://assets/BG/BG5.png" id="2_43e0g"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bepthqwqs5ifa" path="res://heart_area_2d.tscn" id="7_10k7t"]
 [ext_resource type="Texture2D" uid="uid://b30n2hgkw5hmd" path="res://Grilla.png" id="8_4h6ko"]
 [ext_resource type="PackedScene" uid="uid://dta10517raxgq" path="res://wall.tscn" id="9_svrt2"]
+[ext_resource type="PackedScene" uid="uid://bu61coo78wy2w" path="res://box.tscn" id="10_80jhk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clg6b"]
 texture = ExtResource("3_f1x0v")
@@ -79,7 +80,6 @@ position = Vector2(35, 55)
 position = Vector2(25, 55)
 
 [node name="Grilla" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(45, 45)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("8_4h6ko")
@@ -87,3 +87,6 @@ texture = ExtResource("8_4h6ko")
 [node name="wall" parent="." instance=ExtResource("9_svrt2")]
 position = Vector2(15, 65)
 scale = Vector2(2, 2)
+
+[node name="box" parent="." instance=ExtResource("10_80jhk")]
+position = Vector2(65, 35)
