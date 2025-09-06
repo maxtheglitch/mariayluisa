@@ -14,7 +14,6 @@ extends CharacterBody2D
 @export var noleft = false
 
 func _process(delta):
-	print(maria.canright)
 	if rightb.mariaIsRight and canright:
 		if Input.is_action_just_pressed("ui_right") and maria.canright:
 			position.x+=10
