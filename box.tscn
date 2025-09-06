@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://bu61coo78wy2w"]
+
+[ext_resource type="Texture2D" uid="uid://bdww2t8p261qn" path="res://assets/box/box.png" id="1_g2tbl"]
+[ext_resource type="Script" uid="uid://h5ibk1s6uyo6" path="res://box.gd" id="1_oq5cr"]
+[ext_resource type="Script" uid="uid://p4202h5gu7v6" path="res://rightb.gd" id="3_bqn3j"]
+[ext_resource type="Script" uid="uid://dfq4t0huml8a7" path="res://leftb.gd" id="4_amiuo"]
+[ext_resource type="Script" uid="uid://bnohmbjxvohmm" path="res://upb.gd" id="5_wj1a8"]
+[ext_resource type="Script" uid="uid://cp811jp7whd03" path="res://downb.gd" id="6_3d203"]
+[ext_resource type="Script" uid="uid://x0orhx0r7xqd" path="res://centerb.gd" id="7_wj1a8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2tbl"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5cr"]
+size = Vector2(2.99755, 3.00828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d203"]
+size = Vector2(3, 3)
+
+[node name="box" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_oq5cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g2tbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g2tbl")
+
+[node name="rightb" type="Area2D" parent="."]
+script = ExtResource("3_bqn3j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightb"]
+position = Vector2(2.75, 0)
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="leftb" type="Area2D" parent="."]
+script = ExtResource("4_amiuo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftb"]
+position = Vector2(-2.25737, 0)
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="upb" type="Area2D" parent="."]
+script = ExtResource("5_wj1a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="upb"]
+position = Vector2(0.00176129, -2.25352)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="downb" type="Area2D" parent="."]
+script = ExtResource("6_3d203")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="downb"]
+position = Vector2(-0.00413792, 2.50122)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="centerb" type="Area2D" parent="."]
+script = ExtResource("7_wj1a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="centerb"]
+shape = SubResource("RectangleShape2D_3d203")
+
+[connection signal="area_entered" from="rightb" to="leftb" method="_on_rightb_area_entered"]
+[connection signal="area_exited" from="rightb" to="leftb" method="_on_rightb_area_exited"]
+[connection signal="body_entered" from="rightb" to="rightb" method="_on_body_entered"]
+[connection signal="body_exited" from="rightb" to="rightb" method="_on_body_exited"]
+[connection signal="area_entered" from="leftb" to="rightb" method="_on_leftb_area_entered"]
+[connection signal="area_exited" from="leftb" to="rightb" method="_on_leftb_area_exited"]
+[connection signal="body_entered" from="leftb" to="leftb" method="_on_body_entered"]
+[connection signal="body_exited" from="leftb" to="leftb" method="_on_body_exited"]
+[connection signal="body_entered" from="upb" to="upb" method="_on_body_entered"]
+[connection signal="body_exited" from="upb" to="upb" method="_on_body_exited"]
+[connection signal="body_entered" from="downb" to="downb" method="_on_body_entered"]
+[connection signal="body_exited" from="downb" to="downb" method="_on_body_exited"]
+[connection signal="area_entered" from="centerb" to="centerb" method="_on_area_entered"]
+[connection signal="area_exited" from="centerb" to="centerb" method="_on_area_exited"]

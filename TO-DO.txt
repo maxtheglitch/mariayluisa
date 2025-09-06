@@ -1,0 +1,4 @@
+Hecho: Casi listo se arreglaron todo los bugs y se creo el sprite de la caja. Aún sin codear su funcionamiento.
+
+TO-DO:
+-Falta codear el funcionamiento de la caja.

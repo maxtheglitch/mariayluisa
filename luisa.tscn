@@ -1,0 +1,99 @@
+[gd_scene load_steps=14 format=3 uid="uid://dxojkx1dprf3j"]
+
+[ext_resource type="Texture2D" uid="uid://c8c0r4rrkr2da" path="res://assets/luisa/luisa.png" id="1_03wvf"]
+[ext_resource type="Script" uid="uid://bckki6tpuyq2u" path="res://luisa.gd" id="1_6qto3"]
+[ext_resource type="Script" uid="uid://dklxs2ekchmov" path="res://right.gd" id="3_o6e7r"]
+[ext_resource type="Script" uid="uid://bjcsl4taw8wnq" path="res://left.gd" id="4_rxd6y"]
+[ext_resource type="Script" uid="uid://cjk8sq07llmat" path="res://up.gd" id="5_2ev7a"]
+[ext_resource type="Script" uid="uid://dpqx6blq25atv" path="res://down.gd" id="6_mnomw"]
+[ext_resource type="Script" uid="uid://dpx23bxtbr2jw" path="res://centerl.gd" id="7_rxd6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qto3"]
+size = Vector2(10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03wvf"]
+atlas = ExtResource("1_03wvf")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qto3"]
+atlas = ExtResource("1_03wvf")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbdpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03wvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qto3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbdpm"]
+size = Vector2(18, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ev7a"]
+size = Vector2(10, 10)
+
+[node name="luisa" type="CharacterBody2D"]
+script = ExtResource("1_6qto3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6qto3")
+
+[node name="luisaAnimator" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fbdpm")
+autoplay = "default"
+
+[node name="right" type="Area2D" parent="."]
+script = ExtResource("3_o6e7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_fbdpm")
+
+[node name="left" type="Area2D" parent="."]
+script = ExtResource("4_rxd6y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="left"]
+position = Vector2(-10, 0)
+shape = SubResource("RectangleShape2D_fbdpm")
+
+[node name="up" type="Area2D" parent="."]
+script = ExtResource("5_2ev7a")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="up"]
+position = Vector2(0, -5)
+rotation = 1.57079
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_fbdpm")
+
+[node name="down" type="Area2D" parent="."]
+script = ExtResource("6_mnomw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="down"]
+position = Vector2(-1.11063e-06, 4.5)
+rotation = 1.57079
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_fbdpm")
+
+[node name="centerl" type="Area2D" parent="."]
+script = ExtResource("7_rxd6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="centerl"]
+shape = SubResource("RectangleShape2D_2ev7a")
+
+[connection signal="body_entered" from="right" to="right" method="_on_body_entered"]
+[connection signal="body_exited" from="right" to="right" method="_on_body_exited"]
+[connection signal="body_entered" from="left" to="left" method="_on_body_entered"]
+[connection signal="body_exited" from="left" to="left" method="_on_body_exited"]
+[connection signal="body_entered" from="up" to="up" method="_on_body_entered"]
+[connection signal="body_exited" from="up" to="up" method="_on_body_exited"]
+[connection signal="body_entered" from="down" to="down" method="_on_body_entered"]
+[connection signal="body_exited" from="down" to="down" method="_on_body_exited"]
+[connection signal="area_entered" from="centerl" to="centerl" method="_on_area_entered"]
+[connection signal="area_exited" from="centerl" to="centerl" method="_on_area_exited"]

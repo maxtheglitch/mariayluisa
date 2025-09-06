@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=4 uid="uid://xb2bx1lip0pc"]
+
+[ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_43e0g"]
+[ext_resource type="Texture2D" uid="uid://c0bgad23jdwss" path="res://assets/BG/BG5.png" id="2_43e0g"]
+[ext_resource type="Texture2D" uid="uid://b6vwvu30rpbve" path="res://assets/tilemap/tilemap.png" id="3_f1x0v"]
+[ext_resource type="PackedScene" uid="uid://c3aq22troe52h" path="res://maria.tscn" id="4_ynq33"]
+[ext_resource type="PackedScene" uid="uid://dxojkx1dprf3j" path="res://luisa.tscn" id="5_qxytp"]
+[ext_resource type="PackedScene" uid="uid://c3jjlfbpgqabm" path="res://nopass.tscn" id="6_hvaau"]
+[ext_resource type="PackedScene" uid="uid://bepthqwqs5ifa" path="res://heart_area_2d.tscn" id="7_10k7t"]
+[ext_resource type="Texture2D" uid="uid://b30n2hgkw5hmd" path="res://Grilla.png" id="8_4h6ko"]
+[ext_resource type="PackedScene" uid="uid://dta10517raxgq" path="res://wall.tscn" id="9_svrt2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clg6b"]
+texture = ExtResource("3_f1x0v")
+texture_region_size = Vector2i(10, 10)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jschv"]
+tile_size = Vector2i(5, 5)
+sources/0 = SubResource("TileSetAtlasSource_clg6b")
+
+[node name="lvl5" type="Node2D"]
+script = ExtResource("1_43e0g")
+
+[node name="Bg5" type="Sprite2D" parent="."]
+position = Vector2(45, 45)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_43e0g")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAAOAAgAAAACAAEAAAAKAAwAAAABAAEAAAACAA4AAAABAAAAAAAOAAwAAAABAAAAAAAEABAAAAACAAAAAAACAAYAAAACAAEAAAAOAAIAAAACAAEAAAAGAAIAAAACAAEAAAAGAAgAAAACAAEAAAAKAAgAAAACAAEAAAACAAoAAAADAAAAAAAMABAAAAACAAEAAAAQAA4AAAACAAEAAAAKAAAAAAACAAEAAAAEAAAAAAACAAEAAAACAAIAAAACAAAAAAAMAAIAAAACAAAAAAAQAAYAAAACAAAAAAACAAAAAAACAAEAAAAAAAAAAAACAAEAAAAAAAIAAAACAAEAAAAGAAAAAAACAAEAAAAIAAAAAAACAAEAAAAMAAAAAAACAAEAAAAOAAAAAAACAAEAAAAQAAAAAAACAAEAAAAQAAIAAAACAAEAAAAKAAIAAAACAAEAAAAIAAIAAAACAAEAAAAEAAIAAAACAAEAAAACAAQAAAACAAEAAAAAAAQAAAACAAEAAAAEAAQAAAACAAEAAAAGAAQAAAACAAEAAAAIAAQAAAACAAEAAAAKAAQAAAACAAEAAAAMAAQAAAACAAEAAAAOAAQAAAACAAEAAAAQAAQAAAACAAEAAAAOAAYAAAACAAEAAAAMAAYAAAACAAEAAAAKAAYAAAACAAEAAAAEAAYAAAACAAEAAAAAAAYAAAACAAEAAAAAAAgAAAACAAEAAAACAAgAAAACAAEAAAAEAAgAAAADAAAAAAAIAAgAAAACAAEAAAAMAAgAAAACAAEAAAAAAAoAAAACAAEAAAAAAAwAAAACAAEAAAAAAA4AAAACAAEAAAAAABAAAAACAAEAAAAGAAoAAAAEAAAAAAAIAAoAAAADAAAAAAAKAAoAAAADAAAAAAAMAAoAAAACAAEAAAAOAAoAAAACAAEAAAAQAAoAAAACAAEAAAAQAAgAAAACAAEAAAAQAAwAAAABAAEAAAAOAA4AAAACAAEAAAAMAAwAAAABAAEAAAAMAA4AAAACAAEAAAAKAA4AAAACAAEAAAAKABAAAAACAAEAAAAOABAAAAACAAEAAAAQABAAAAACAAEAAAACABAAAAACAAEAAAAEAA4AAAACAAEAAAAEAAwAAAACAAEAAAACAAwAAAACAAEAAAAIAAwAAAACAAEAAAAEAAoAAAAEAAAAAAAIAA4AAAACAAEAAAAGAA4AAAACAAEAAAAGABAAAAACAAEAAAAIABAAAAACAAEAAAAGAAYAAAADAAAAAAAIAAYAAAADAAAAAAAGAAwAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_jschv")
+
+[node name="maria" parent="." instance=ExtResource("4_ynq33")]
+position = Vector2(55, 25)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(45, 45)
+
+[node name="luisa" parent="." instance=ExtResource("5_qxytp")]
+position = Vector2(25, 25)
+
+[node name="Nopass" parent="." instance=ExtResource("6_hvaau")]
+position = Vector2(25, 45)
+
+[node name="Nopass2" parent="." instance=ExtResource("6_hvaau")]
+position = Vector2(15, 55)
+
+[node name="Nopass3" parent="." instance=ExtResource("6_hvaau")]
+position = Vector2(35, 35)
+
+[node name="Nopass4" parent="." instance=ExtResource("6_hvaau")]
+position = Vector2(45, 35)
+
+[node name="Nopass5" parent="." instance=ExtResource("6_hvaau")]
+position = Vector2(45, 55)
+
+[node name="Nopass6" parent="." instance=ExtResource("6_hvaau")]
+position = Vector2(55, 55)
+
+[node name="heartArea2DM" parent="." instance=ExtResource("7_10k7t")]
+position = Vector2(35, 55)
+
+[node name="heartArea2DL" parent="." instance=ExtResource("7_10k7t")]
+position = Vector2(25, 55)
+
+[node name="Grilla" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("8_4h6ko")
+
+[node name="wall" parent="." instance=ExtResource("9_svrt2")]
+position = Vector2(15, 65)
+scale = Vector2(2, 2)

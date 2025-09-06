@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://c3aq22troe52h"]
+
+[ext_resource type="Script" uid="uid://bjod8bvev3di6" path="res://maria.gd" id="1_32k0w"]
+[ext_resource type="Texture2D" uid="uid://en4ekp4hmsxf" path="res://assets/maria/sprite_sheet_maria.png" id="1_gdde5"]
+[ext_resource type="Script" uid="uid://cpfy3mi644mel" path="res://rightm.gd" id="3_g0pug"]
+[ext_resource type="Script" uid="uid://pid3wuio3qph" path="res://leftm.gd" id="4_qwe6b"]
+[ext_resource type="Script" uid="uid://cv3dfsebhk8yx" path="res://upm.gd" id="5_6aici"]
+[ext_resource type="Script" uid="uid://dwid5ja66n3be" path="res://downm.gd" id="6_g5pys"]
+[ext_resource type="Script" uid="uid://cqr58xf2uqm11" path="res://centerm.gd" id="7_g5pys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdde5"]
+size = Vector2(5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om8sx"]
+atlas = ExtResource("1_gdde5")
+region = Rect2(0, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32k0w"]
+atlas = ExtResource("1_gdde5")
+region = Rect2(5, 0, 5, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0pug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om8sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32k0w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6aici"]
+size = Vector2(5, 2.88688)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg4h0"]
+size = Vector2(5, 5)
+
+[node name="maria" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_32k0w")
+canLuisaDown = true
+canLuisaUp = true
+
+[node name="mariaColl" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gdde5")
+
+[node name="mariaAnimator" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g0pug")
+autoplay = "default"
+frame_progress = 0.967465
+
+[node name="rightm" type="Area2D" parent="."]
+script = ExtResource("3_g0pug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightm"]
+position = Vector2(2.5, 0.0013895)
+shape = SubResource("RectangleShape2D_6aici")
+
+[node name="leftm" type="Area2D" parent="."]
+script = ExtResource("4_qwe6b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="leftm"]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_6aici")
+
+[node name="upm" type="Area2D" parent="."]
+script = ExtResource("5_6aici")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="upm"]
+position = Vector2(0, -2.5)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_6aici")
+
+[node name="downm" type="Area2D" parent="."]
+script = ExtResource("6_g5pys")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="downm"]
+position = Vector2(0, 2.5)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_6aici")
+
+[node name="centerm" type="Area2D" parent="."]
+script = ExtResource("7_g5pys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="centerm"]
+shape = SubResource("RectangleShape2D_xg4h0")
+
+[connection signal="area_entered" from="rightm" to="rightm" method="_on_area_entered"]
+[connection signal="area_exited" from="rightm" to="rightm" method="_on_area_exited"]
+[connection signal="body_entered" from="rightm" to="rightm" method="_on_body_entered"]
+[connection signal="body_exited" from="rightm" to="rightm" method="_on_body_exited"]
+[connection signal="area_entered" from="leftm" to="leftm" method="_on_area_entered"]
+[connection signal="area_exited" from="leftm" to="leftm" method="_on_area_exited"]
+[connection signal="body_entered" from="leftm" to="leftm" method="_on_body_entered"]
+[connection signal="body_exited" from="leftm" to="leftm" method="_on_body_exited"]
+[connection signal="body_entered" from="upm" to="upm" method="_on_body_entered"]
+[connection signal="body_exited" from="upm" to="upm" method="_on_body_exited"]
+[connection signal="body_entered" from="downm" to="downm" method="_on_body_entered"]
+[connection signal="body_exited" from="downm" to="downm" method="_on_body_exited"]
+[connection signal="area_entered" from="centerm" to="centerm" method="_on_area_entered"]
+[connection signal="area_exited" from="centerm" to="centerm" method="_on_area_exited"]

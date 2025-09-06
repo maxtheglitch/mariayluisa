@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3jjlfbpgqabm"]
+
+[ext_resource type="Script" uid="uid://c60pjv6et61gf" path="res://noright.gd" id="1_foghh"]
+[ext_resource type="Script" uid="uid://gp0rbalwe7rg" path="res://noleft.gd" id="2_qykje"]
+[ext_resource type="Script" uid="uid://dfhrv5eb87c73" path="res://nodown.gd" id="3_ia42e"]
+[ext_resource type="Script" uid="uid://imkdftah6qa7" path="res://noup.gd" id="4_7n1g8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8u5p"]
+size = Vector2(10, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkog6"]
+size = Vector2(5, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qykje"]
+size = Vector2(10, 0)
+
+[node name="Nopass" type="Area2D"]
+
+[node name="noright" type="Area2D" parent="."]
+script = ExtResource("1_foghh")
+
+[node name="noright" type="CollisionShape2D" parent="noright"]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_a8u5p")
+
+[node name="noleft" type="Area2D" parent="."]
+script = ExtResource("2_qykje")
+
+[node name="noleft" type="CollisionShape2D" parent="noleft"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_a8u5p")
+
+[node name="nodown" type="Area2D" parent="."]
+script = ExtResource("3_ia42e")
+
+[node name="nodown" type="CollisionShape2D" parent="nodown"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_tkog6")
+
+[node name="noup" type="Area2D" parent="."]
+script = ExtResource("4_7n1g8")
+
+[node name="noup" type="CollisionShape2D" parent="noup"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_tkog6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qykje")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="noright" to="noright" method="_on_body_entered"]
+[connection signal="body_exited" from="noright" to="noright" method="_on_body_exited"]
+[connection signal="body_entered" from="noleft" to="noleft" method="_on_body_entered"]
+[connection signal="body_exited" from="noleft" to="noleft" method="_on_body_exited"]
+[connection signal="body_entered" from="nodown" to="nodown" method="_on_body_entered"]
+[connection signal="body_exited" from="nodown" to="nodown" method="_on_body_exited"]
+[connection signal="body_entered" from="noup" to="noup" method="_on_body_entered"]
+[connection signal="body_exited" from="noup" to="noup" method="_on_body_exited"]

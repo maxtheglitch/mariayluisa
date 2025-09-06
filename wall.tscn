@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dta10517raxgq"]
+
+[ext_resource type="Script" uid="uid://cxrmmkbt2m4xl" path="res://left_wall.gd" id="1_xduj2"]
+[ext_resource type="Script" uid="uid://bhug42cik6ucj" path="res://right_wall.gd" id="2_bbgl8"]
+[ext_resource type="Script" uid="uid://c1xojtcd2lgti" path="res://up_wall.gd" id="3_dy4dl"]
+[ext_resource type="Script" uid="uid://ck2oau8mdkvbh" path="res://down_wall.gd" id="4_0m056"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ip0a1"]
+b = Vector2(0, 92)
+
+[node name="wall" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="leftWall" type="Area2D" parent="Node"]
+script = ExtResource("1_xduj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/leftWall"]
+position = Vector2(3, 0)
+shape = SubResource("SegmentShape2D_ip0a1")
+
+[node name="rightWall" type="Area2D" parent="Node"]
+script = ExtResource("2_bbgl8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/rightWall"]
+position = Vector2(87, 0)
+shape = SubResource("SegmentShape2D_ip0a1")
+
+[node name="upWall" type="Area2D" parent="Node"]
+script = ExtResource("3_dy4dl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/upWall"]
+position = Vector2(-1, 4)
+rotation = -1.57079
+shape = SubResource("SegmentShape2D_ip0a1")
+
+[node name="downWall" type="Area2D" parent="Node"]
+script = ExtResource("4_0m056")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/downWall"]
+position = Vector2(-1, 86)
+rotation = -1.57079
+shape = SubResource("SegmentShape2D_ip0a1")
+
+[connection signal="body_entered" from="Node/leftWall" to="Node/leftWall" method="_on_body_entered"]
+[connection signal="body_exited" from="Node/leftWall" to="Node/leftWall" method="_on_body_exited"]
+[connection signal="body_entered" from="Node/rightWall" to="Node/rightWall" method="_on_body_entered"]
+[connection signal="body_exited" from="Node/rightWall" to="Node/rightWall" method="_on_body_exited"]
+[connection signal="body_entered" from="Node/upWall" to="Node/upWall" method="_on_body_entered"]
+[connection signal="body_exited" from="Node/upWall" to="Node/upWall" method="_on_body_exited"]
+[connection signal="body_entered" from="Node/downWall" to="Node/downWall" method="_on_body_entered"]
+[connection signal="body_exited" from="Node/downWall" to="Node/downWall" method="_on_body_exited"]

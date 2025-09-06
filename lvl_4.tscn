@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=4 uid="uid://qkmsqo18r7c3"]
+
+[ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_ufpfk"]
+[ext_resource type="Texture2D" uid="uid://b62me447u3f0q" path="res://assets/BG/BG4.png" id="2_ufpfk"]
+[ext_resource type="Texture2D" uid="uid://b6vwvu30rpbve" path="res://assets/tilemap/tilemap.png" id="3_eidr8"]
+[ext_resource type="PackedScene" uid="uid://c3aq22troe52h" path="res://maria.tscn" id="4_sfugp"]
+[ext_resource type="PackedScene" uid="uid://dxojkx1dprf3j" path="res://luisa.tscn" id="5_7so1t"]
+[ext_resource type="PackedScene" uid="uid://c3jjlfbpgqabm" path="res://nopass.tscn" id="6_yqkdm"]
+[ext_resource type="PackedScene" uid="uid://bepthqwqs5ifa" path="res://heart_area_2d.tscn" id="7_niheu"]
+[ext_resource type="Texture2D" uid="uid://b30n2hgkw5hmd" path="res://Grilla.png" id="8_d7q7f"]
+[ext_resource type="PackedScene" uid="uid://dta10517raxgq" path="res://wall.tscn" id="9_s24pw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clg6b"]
+texture = ExtResource("3_eidr8")
+texture_region_size = Vector2i(10, 10)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jschv"]
+tile_size = Vector2i(5, 5)
+sources/0 = SubResource("TileSetAtlasSource_clg6b")
+
+[node name="lvl4" type="Node2D"]
+script = ExtResource("1_ufpfk")
+
+[node name="Bg4" type="Sprite2D" parent="."]
+position = Vector2(45, 45)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_ufpfk")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAAOAAgAAAABAAEAAAAKAAwAAAABAAEAAAACAA4AAAABAAAAAAAOAAwAAAABAAAAAAAEABAAAAACAAAAAAACAAYAAAABAAEAAAAOAAIAAAABAAEAAAAGAAIAAAABAAEAAAAGAAgAAAABAAEAAAAKAAgAAAABAAEAAAACAAoAAAADAAAAAAAMABAAAAABAAEAAAAQAA4AAAABAAEAAAAKAAAAAAABAAEAAAAEAAAAAAABAAEAAAACAAIAAAACAAAAAAAMAAIAAAACAAAAAAAQAAYAAAACAAAAAAACAAAAAAABAAEAAAAAAAAAAAABAAEAAAAAAAIAAAABAAEAAAAGAAAAAAABAAEAAAAIAAAAAAABAAEAAAAMAAAAAAABAAEAAAAOAAAAAAABAAEAAAAQAAAAAAABAAEAAAAQAAIAAAABAAEAAAAKAAIAAAABAAEAAAAIAAIAAAABAAEAAAAEAAIAAAABAAEAAAACAAQAAAABAAEAAAAAAAQAAAABAAEAAAAEAAQAAAAAAAAAAAAGAAQAAAABAAEAAAAIAAQAAAABAAEAAAAKAAQAAAAAAAAAAAAMAAQAAAABAAEAAAAOAAQAAAABAAEAAAAQAAQAAAABAAEAAAAOAAYAAAABAAEAAAAMAAYAAAABAAEAAAAKAAYAAAABAAEAAAAEAAYAAAABAAEAAAAAAAYAAAABAAEAAAAAAAgAAAABAAEAAAACAAgAAAABAAEAAAAEAAgAAAADAAAAAAAIAAgAAAABAAEAAAAMAAgAAAABAAEAAAAAAAoAAAABAAEAAAAAAAwAAAABAAEAAAAAAA4AAAABAAEAAAAAABAAAAABAAEAAAAGAAoAAAAEAAAAAAAIAAoAAAABAAEAAAAKAAoAAAABAAEAAAAMAAoAAAABAAEAAAAOAAoAAAABAAEAAAAQAAoAAAABAAEAAAAQAAgAAAABAAEAAAAQAAwAAAABAAEAAAAOAA4AAAABAAEAAAAMAAwAAAABAAEAAAAMAA4AAAABAAEAAAAKAA4AAAABAAEAAAAKABAAAAABAAEAAAAOABAAAAABAAEAAAAQABAAAAABAAEAAAACABAAAAABAAEAAAAEAA4AAAABAAEAAAAEAAwAAAABAAEAAAACAAwAAAABAAEAAAAIAAwAAAABAAEAAAAEAAoAAAAEAAAAAAAIAA4AAAABAAEAAAAGAA4AAAABAAEAAAAGABAAAAABAAEAAAAIABAAAAABAAEAAAAGAAYAAAABAAEAAAAIAAYAAAABAAEAAAAGAAwAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_jschv")
+
+[node name="maria" parent="." instance=ExtResource("4_sfugp")]
+position = Vector2(55, 25)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(45, 45)
+
+[node name="luisa" parent="." instance=ExtResource("5_7so1t")]
+position = Vector2(25, 25)
+
+[node name="Nopass" parent="." instance=ExtResource("6_yqkdm")]
+position = Vector2(25, 45)
+
+[node name="Nopass2" parent="." instance=ExtResource("6_yqkdm")]
+position = Vector2(15, 55)
+
+[node name="heartArea2DM" parent="." instance=ExtResource("7_niheu")]
+position = Vector2(35, 55)
+
+[node name="heartArea2DL" parent="." instance=ExtResource("7_niheu")]
+position = Vector2(25, 55)
+
+[node name="Grilla" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(45, 45)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("8_d7q7f")
+
+[node name="wall" parent="." instance=ExtResource("9_s24pw")]
+position = Vector2(15, 65)
+scale = Vector2(2, 2)

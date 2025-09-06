@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bepthqwqs5ifa"]
+
+[ext_resource type="Script" uid="uid://dr24djahc875o" path="res://heart_area_2d.gd" id="1_u1170"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mjtb"]
+size = Vector2(4, 4)
+
+[node name="heartArea2D" type="Area2D"]
+script = ExtResource("1_u1170")
+
+[node name="heartColl" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5mjtb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
