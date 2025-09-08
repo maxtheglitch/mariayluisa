@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://5q3f488ue68u"]
+[gd_scene load_steps=20 format=4 uid="uid://5q3f488ue68u"]
 
 [ext_resource type="PackedScene" uid="uid://c3aq22troe52h" path="res://maria.tscn" id="1_6mpcb"]
 [ext_resource type="Script" uid="uid://0sutum8unp5q" path="res://lvl_1.gd" id="1_t6wp4"]
@@ -9,11 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bepthqwqs5ifa" path="res://heart_area_2d.tscn" id="5_clg6b"]
 [ext_resource type="Texture2D" uid="uid://b30n2hgkw5hmd" path="res://Grilla.png" id="7_bcbm8"]
 [ext_resource type="PackedScene" uid="uid://dta10517raxgq" path="res://wall.tscn" id="8_31jyx"]
-[ext_resource type="AudioStream" uid="uid://di36sct38wkqf" path="res://Music/Intro/Intro - Track 1.wav" id="10_s5spe"]
-[ext_resource type="AudioStream" uid="uid://6csg34sa6vvg" path="res://Music/Intro/Intro - Track 2.wav" id="11_v6ada"]
-[ext_resource type="AudioStream" uid="uid://cx8afal17amb5" path="res://Music/Intro/Intro - Track 3.wav" id="12_g5nw0"]
-[ext_resource type="AudioStream" uid="uid://cgqbgtabws6vw" path="res://Music/Intro/Intro - Track 4.wav" id="13_tp2bi"]
-[ext_resource type="AudioStream" uid="uid://ienob15oymmq" path="res://Music/Intro/Intro - Track 5.wav" id="14_ju7kl"]
+[ext_resource type="AudioStream" uid="uid://i4t3nn8vm5yc" path="res://Audio/SFX/move_SFX.mp3" id="10_g5nw0"]
+[ext_resource type="AudioStream" uid="uid://di36sct38wkqf" path="res://Audio/Intro/Intro - Track 1.wav" id="10_s5spe"]
+[ext_resource type="Script" uid="uid://tl4uith78uyx" path="res://sfx.gd" id="10_tp2bi"]
+[ext_resource type="Script" uid="uid://dkx52g41l75gk" path="res://musicLvl1.gd" id="11_tp2bi"]
+[ext_resource type="AudioStream" uid="uid://6csg34sa6vvg" path="res://Audio/Intro/Intro - Track 2.wav" id="11_v6ada"]
+[ext_resource type="AudioStream" uid="uid://cx8afal17amb5" path="res://Audio/Intro/Intro - Track 3.wav" id="12_g5nw0"]
+[ext_resource type="AudioStream" uid="uid://cgqbgtabws6vw" path="res://Audio/Intro/Intro - Track 4.wav" id="13_tp2bi"]
+[ext_resource type="AudioStream" uid="uid://ienob15oymmq" path="res://Audio/Intro/Intro - Track 5.wav" id="14_ju7kl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clg6b"]
 texture = ExtResource("4_okdh5")
@@ -84,7 +87,14 @@ texture = ExtResource("7_bcbm8")
 position = Vector2(15, 65)
 scale = Vector2(2, 2)
 
+[node name="SFX" type="Node2D" parent="."]
+script = ExtResource("10_tp2bi")
+
+[node name="move_sfx" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("10_g5nw0")
+
 [node name="Music" type="Node2D" parent="."]
+script = ExtResource("11_tp2bi")
 
 [node name="Sq1CH" type="AudioStreamPlayer2D" parent="Music"]
 stream = ExtResource("10_s5spe")

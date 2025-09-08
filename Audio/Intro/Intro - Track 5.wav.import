@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ienob15oymmq"
-path="res://.godot/imported/Intro - Track 5.wav-803002f5fdc4fbc5b024331c88a60c4b.sample"
+path="res://.godot/imported/Intro - Track 5.wav-4f343eebc787eb49c37b5ac08e4d2104.sample"
 
 [deps]
 
-source_file="res://Music/Intro/Intro - Track 5.wav"
-dest_files=["res://.godot/imported/Intro - Track 5.wav-803002f5fdc4fbc5b024331c88a60c4b.sample"]
+source_file="res://Audio/Intro/Intro - Track 5.wav"
+dest_files=["res://.godot/imported/Intro - Track 5.wav-4f343eebc787eb49c37b5ac08e4d2104.sample"]
 
 [params]
 
