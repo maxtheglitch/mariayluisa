@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cx8afal17amb5"
+path="res://.godot/imported/Intro - Track 3.wav-620f7d772d36b30ce99f501b0b580232.sample"
+
+[deps]
+
+source_file="res://Music/Intro/Intro - Track 3.wav"
+dest_files=["res://.godot/imported/Intro - Track 3.wav-620f7d772d36b30ce99f501b0b580232.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

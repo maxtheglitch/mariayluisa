@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://qpee4nr2w3ks"]
+
+[node name="Music" type="Node2D"]
+
+[node name="Sq1CH" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+bus = &"Square1"
+
+[node name="Sq2CH" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+bus = &"Square2"
+
+[node name="WvCH" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+bus = &"Wave"
+
+[node name="NoisCh" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+bus = &"Noise"
+
+[node name="ExCH" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+bus = &"Extra"
