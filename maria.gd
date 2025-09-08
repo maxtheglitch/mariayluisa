@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var move_sfx: AudioStreamPlayer2D = $"../SFX/move_sfx"
 @export var canright = true
 @export var canleft = true
 @export var candown = true
@@ -27,6 +28,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_right") and canright and !rightm.is_luisa_area_atright and !centerm.noright:
 		position.x+=10
 		canleft = true
+		
 	if Input.is_action_just_pressed("ui_left") and canleft and !leftm.is_luisa_area_atleft and !centerm.noleft:
 		position.x-=10
 		canright = true
